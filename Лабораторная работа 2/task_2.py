@@ -38,11 +38,11 @@ class Library:
             return 1
 
     def get_index_by_book_id(self, id_: int) -> int:
-        if id_ > len(self.books):
-            raise ValueError("Книги с запрашиваемым id не существует")
         for i, value in enumerate(self.books):
             if value.id_ == id_:
                 return i
+        else:
+            raise ValueError("Книги с запрашиваемым id не существует")
 
 if __name__ == '__main__':
     empty_library = Library()  # инициализируем пустую библиотеку
